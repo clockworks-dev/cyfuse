@@ -619,7 +619,7 @@ function renderModule() {
     <div class="mod-head">
       <span class="mod-head__num" aria-hidden="true">${m.num}</span>
       <div class="mod-head__body">
-        <h3 class="mod-head__title">Nastavna jedinica ${Number(m.num)}: ${m.name}</h3>
+        <h3 class="mod-head__title">Modul ${Number(m.num)}: ${m.name}</h3>
         <div class="mod-head__chips">
           <span class="chip chip--hrs">${m.hrs} ${m.hrs === 1 ? 'sat' : m.hrs < 5 ? 'sata' : 'sati'}</span>
           ${m.chips.map(c => `<span class="chip">${c}</span>`).join('')}
@@ -704,7 +704,7 @@ function typeTerminal() {
   const outEl = document.getElementById('type-out');
   const cmd = './pokreni_kurikulum --moduli 9 --sati 35';
   const lines = [
-    ['<span class="ok">[OK]</span> Učitano <strong>9</strong> nastavnih jedinica', 500],
+    ['<span class="ok">[OK]</span> Učitano <strong>9</strong> modula', 500],
     ['<span class="ok">[OK]</span> Pripremljeno <strong>18</strong> praktičnih zadataka', 450],
     ['<span class="ok">[OK]</span> Laboratorij: <strong>izolirano okruženje</strong>', 450],
     ['<span class="info">[INFO]</span> Teorija 30 % · Praksa 70 %', 400],
