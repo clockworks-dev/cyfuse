@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kibernetička sigurnost — Kurikulum za srednju školu (35 sati)</title>
+  <meta name="description"
+    content="Kurikulum kibernetičke sigurnosti za srednju školu: 9 modula, 35 sati, 18 praktičnih zadataka, CTF natjecanja i etički kodeks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0f16'/%3E%3Cpath d='M16 6l8 3v7c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V9l8-3z' fill='none' stroke='%232dd4bf' stroke-width='2'/%3E%3Ccircle cx='16' cy='15' r='2.5' fill='%232dd4bf'/%3E%3C/svg%3E" />
+</head>
+
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#vrh" class="brand" aria-label="Kibernetička sigurnost — naslovnica">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 4l9 3.4v7.8c0 5.6-3.9 9.5-9 11.1-5.1-1.6-9-5.5-9-11.1V7.4L16 4z" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+          <circle cx="16" cy="14.5" r="2.6" fill="currentColor" />
+          <path d="M16 17.2v3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <span class="brand__text">kiber<span class="brand__accent">.sigurnost</span></span>
+      </a>
+      <nav class="nav" aria-label="Glavna navigacija">
+        <a href="#program">Program</a>
+        <a href="#moduli">Moduli</a>
+        <a href="#raspored">Raspored</a>
+        <a href="#vrednovanje">Vrednovanje</a>
+        <a href="#etika">Etika</a>
+        <a href="#oprema">Oprema</a>
+        <a href="#izvori">Izvori</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="vrh">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__copy reveal">
+          <p class="eyebrow">// KURIKULUM · SREDNJA ŠKOLA · 3. RAZRED</p>
+          <h1 class="hero__title">Kibernetička<br /><span class="hero__accent">sigurnost</span></h1>
+          <p class="hero__lead">
+            Nauči kako napadači razmišljaju i kako se sustavi brane — od phishinga i
+            kriptografije do web ranjivosti, clouda i IoT uređaja. Sve u izoliranom
+            laboratorijskom okruženju.
+          </p>
+          <ul class="hero__meta" role="list">
+            <li><strong>9</strong> nastavnih jedinica</li>
+            <li><strong>35</strong> sati nastave</li>
+            <li><strong>18</strong> praktičnih zadataka</li>
+            <li><strong>70&nbsp;%</strong> praktičnog rada</li>
+          </ul>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#moduli">Istraži module
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a class="btn btn--ghost" href="#raspored">Raspored izvedbe</a>
+          </div>
+        </div>
+        <div class="hero__terminal reveal" aria-hidden="true">
+          <div class="terminal">
+            <div class="terminal__bar">
+              <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+              <span class="terminal__title">laboratorij@skola:~</span>
+            </div>
+            <div class="terminal__body">
+              <p><span class="t-prompt">$</span> <span class="t-cmd" id="type-cmd"></span><span
+                  class="t-cursor">▌</span></p>
+              <div id="type-out" class="t-out"></div>
+            </div>
+          </div>
+          <div class="hero__badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M12 3l9 4v5c0 5.5-4 9.4-9 11-5-1.6-9-5.5-9-11V7l9-4z" />
+            </svg>
+            Svi zadaci izvode se samo u izoliranom laboratoriju
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROGRAM ===================== -->
+    <section class="section" id="program">
+      <div class="container">
+        <p class="eyebrow reveal">[ 01 ] — OPĆE INFORMACIJE</p>
+        <h2 class="section__title reveal">O programu</h2>
+        <p class="section__lead reveal">
+          Program učenicima donosi temeljno razumijevanje kibernetičke sigurnosti i
+          odgovoran, etičan odnos prema digitalnom svijetu.
+        </p>
+        <div class="grid grid--4">
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="12" cy="12" r="1" fill="currentColor" />
+              </svg>
+            </div>
+            <h3>Cilj programa</h3>
+            <p>Učenici stječu temeljno razumijevanje kibernetičke sigurnosti, uče kako napadači razmišljaju i kako se
+              sustavi brane te razvijaju odgovoran i etičan odnos prema digitalnom svijetu.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+              </svg>
+            </div>
+            <h3>Ciljana skupina</h3>
+            <p>Učenici srednje škole — 3. razred, informatički i STEM smjerovi. Prilagodljivo i drugim smjerovima uz
+              lakši tempo izvedbe.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 11l3 3L22 4" />
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+              </svg>
+            </div>
+            <h3>Preduvjeti</h3>
+            <p>Osnove rada s računalom, osnovno razumijevanje mreža (IP adresa, preglednik, poslužitelj) i osnove
+              programiranja — poželjno Python. Dublje predznanje nije potrebno.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 20v-6M10 20V8M16 20v-9M22 20V4" />
+                <path d="M2 20h20" />
+              </svg>
+            </div>
+            <h3>Struktura nastave</h3>
+            <p>Devet tematskih jedinica u 35 sati. Oko 30&nbsp;% teorije i 70&nbsp;% praktičnog rada: laboratorijske
+              vježbe, CTF zadaci i mini-projekti — isključivo u izoliranom okruženju.</p>
+          </article>
+        </div>
+
+        <!-- Satnica -->
+        <div class="hours reveal">
+          <div class="hours__head">
+            <h3>Pregled satnice — 9 jedinica, ukupno 35 sati</h3>
+            <span class="hours__note">1 sat = 45 minuta (školski sat)</span>
+          </div>
+          <div class="hours__rows" id="hours-rows"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MODULI ===================== -->
+    <section class="section section--offset" id="moduli">
+      <div class="container">
+        <p class="eyebrow reveal">[ 02 ] — MODUL</p>
+        <h2 class="section__title reveal">Devet modula</h2>
+        <p class="section__lead reveal">
+          Svaka jedinica donosi ishode učenja, sadržaj, praktične zadatke i provjerene
+          izvore. Odaberite modul za detalje.
+        </p>
+
+        <div class="mod-tabs reveal" id="mod-tabs" role="tablist" aria-label="Odabir modula"></div>
+
+        <div class="mod-detail" id="mod-detail"></div>
+
+        <div class="mod-nav">
+          <button class="btn btn--ghost" id="mod-prev">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              aria-hidden="true">
+              <path d="M19 12H5M11 6l-6 6 6 6" />
+            </svg>
+            Prethodni modul
+          </button>
+          <button class="btn btn--ghost" id="mod-next">
+            Sljedeći modul
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RASPORED ===================== -->
+    <section class="section" id="raspored">
+      <div class="container">
+        <p class="eyebrow reveal">[ 03 ] — RASPORED IZVEDBE</p>
+        <h2 class="section__title reveal">Dvije varijante izvedbe</h2>
+        <p class="section__lead reveal">
+          Kurikulum je moguće izvesti kao intenzivan blok-program ili rasporediti
+          kroz školsku godinu.
+        </p>
+
+        <div class="sched-tabs reveal" role="tablist" aria-label="Varijanta rasporeda">
+          <button class="sched-tab is-active" id="tab-a" role="tab" aria-selected="true"
+            aria-controls="sched-a">Varijanta A — blok-program</button>
+          <button class="sched-tab" id="tab-b" role="tab" aria-selected="false" aria-controls="sched-b">Varijanta B —
+            kroz školsku godinu</button>
+        </div>
+
+        <div class="sched-panel reveal" id="sched-a" role="tabpanel">
+          <h3 class="sched-panel__title">Blok-program: 5 dana × 7 sati</h3>
+          <div class="sched-table sched-table--days">
+            <div class="sched-row sched-row--head">
+              <span>Dan</span><span>Sadržaj (modul i sati)</span>
+            </div>
+            <div class="sched-row"><span class="sched-day">1. dan</span><span>Modul 1: Cyber Security Awareness (3) +
+                Modul 2: Etičko hakiranje (4)</span></div>
+            <div class="sched-row"><span class="sched-day">2. dan</span><span>Modul 3: Mrežna sigurnost (5) + Modul 4:
+                OSINT (2)</span></div>
+            <div class="sched-row"><span class="sched-day">3. dan</span><span>Modul 4: OSINT (1) + Modul 5:
+                Kriptografija (4) + Modul 6: OWASP (2)</span></div>
+            <div class="sched-row"><span class="sched-day">4. dan</span><span>Modul 6: OWASP (3) + Modul 7: Cloud
+                security (3) + Modul 8: Reverzno inženjerstvo (1)</span></div>
+            <div class="sched-row"><span class="sched-day">5. dan</span><span>Modul 8: Reverzno inženjerstvo (3) + Modul
+                9: IoT security (4)</span></div>
+          </div>
+        </div>
+
+        <div class="sched-panel is-hidden" id="sched-b" role="tabpanel">
+          <h3 class="sched-panel__title">Kroz školsku godinu: 18 tjedana</h3>
+          <div class="sched-table sched-table--weeks">
+            <div class="sched-row sched-row--head">
+              <span>Tj.</span><span>Sadržaj</span><span>Tj.</span><span>Sadržaj</span></div>
+            <div class="sched-row"><span class="sched-day">1.</span><span>Modul 1 (2)</span><span
+                class="sched-day">10.</span><span>Modul 5 (1) + Modul 6 (1)</span></div>
+            <div class="sched-row"><span class="sched-day">2.</span><span>Modul 1 (1) + Modul 2 (1)</span><span
+                class="sched-day">11.</span><span>Modul 6 (2)</span></div>
+            <div class="sched-row"><span class="sched-day">3.</span><span>Modul 2 (2)</span><span
+                class="sched-day">12.</span><span>Modul 6 (2)</span></div>
+            <div class="sched-row"><span class="sched-day">4.</span><span>Modul 2 (1) + Modul 3 (1)</span><span
+                class="sched-day">13.</span><span>Modul 7 (2)</span></div>
+            <div class="sched-row"><span class="sched-day">5.</span><span>Modul 3 (2)</span><span
+                class="sched-day">14.</span><span>Modul 7 (1) + Modul 8 (1)</span></div>
+            <div class="sched-row"><span class="sched-day">6.</span><span>Modul 3 (2)</span><span
+                class="sched-day">15.</span><span>Modul 8 (2)</span></div>
+            <div class="sched-row"><span class="sched-day">7.</span><span>Modul 4 (2)</span><span
+                class="sched-day">16.</span><span>Modul 8 (1) + Modul 9 (1)</span></div>
+            <div class="sched-row"><span class="sched-day">8.</span><span>Modul 4 (1) + Modul 5 (1)</span><span
+                class="sched-day">17.</span><span>Modul 9 (2)</span></div>
+            <div class="sched-row"><span class="sched-day">9.</span><span>Modul 5 (2)</span><span
+                class="sched-day">18.</span><span>Modul 9 (1)</span></div>
+          </div>
+        </div>
+
+        <aside class="callout callout--info reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />
+          </svg>
+          <p><strong>Izvrsna motivacija i završna provjera</strong> je sudjelovanje na <a
+              href="https://www.cert.hr/hacknite" target="_blank" rel="noopener">Hacknite CTF natjecanju Nacionalnog
+              CERT-a</a>, namijenjenom upravo srednjoškolskim timovima.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===================== VREDNOVANJE ===================== -->
+    <section class="section section--offset" id="vrednovanje">
+      <div class="container container--narrow">
+        <p class="eyebrow reveal">[ 04 ] — VREDNOVANJE</p>
+        <h2 class="section__title reveal">Kako se vrednuje uspjeh</h2>
+        <div class="grade-list">
+          <div class="grade reveal">
+            <div class="grade__head">
+              <h3>Praktične vježbe i laboratorijski radovi</h3><span class="grade__pct">40&nbsp;%</span>
+            </div>
+            <div class="grade__bar"><span style="--w:40%"></span></div>
+            <p>Izvršeni zadaci, bilješke i dokumentacija.</p>
+          </div>
+          <div class="grade reveal">
+            <div class="grade__head">
+              <h3>Mini-kvizovi po modulima</h3><span class="grade__pct">20&nbsp;%</span>
+            </div>
+            <div class="grade__bar"><span style="--w:20%"></span></div>
+            <p>Kratke provjere znanja nakon svakog modula.</p>
+          </div>
+          <div class="grade reveal">
+            <div class="grade__head">
+              <h3>Završni projekt / timski CTF</h3><span class="grade__pct">30&nbsp;%</span>
+            </div>
+            <div class="grade__bar"><span style="--w:30%"></span></div>
+            <p>Izvješće, prezentacija i timski rad.</p>
+          </div>
+          <div class="grade reveal">
+            <div class="grade__head">
+              <h3>Aktivnost i etički kodeks</h3><span class="grade__pct">10&nbsp;%</span>
+            </div>
+            <div class="grade__bar"><span style="--w:10%"></span></div>
+            <p>Sudjelovanje u raspravama i pridržavanje pravila.</p>
+          </div>
+        </div>
+        <p class="section__lead reveal">
+          Uz ocjene, prati se opisno napredovanje učenika, samovrednovanje i vrednovanje
+          među vršnjacima na završnoj prezentaciji. Učenici se potiču sudjelovati na
+          Hacknite CTF natjecanju Nacionalnog CERT-a kao praktičnoj provjeri znanja.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== ETIČKI KODEKS ===================== -->
+    <section class="section" id="etika">
+      <div class="container container--narrow">
+        <p class="eyebrow reveal">[ 05 ] — ETIČKI KODEKS PROGRAMA</p>
+        <h2 class="section__title reveal">Kodeks koji potpisuju svi učenici</h2>
+        <ol class="ethics reveal" role="list">
+          <li><span class="ethics__num">01</span>
+            <p>Alate i tehnike koristimo <strong>samo u laboratoriju</strong> ili na sustavima za koje imamo izričito
+              pisano dopuštenje.</p>
+          </li>
+          <li><span class="ethics__num">02</span>
+            <p><strong>Nikada ne testiramo</strong> školsku mrežu, tuđe uređaje, račune ili web stranice.</p>
+          </li>
+          <li><span class="ethics__num">03</span>
+            <p>Poštujemo <strong>privatnost drugih</strong> — ne prikupljamo niti dijelimo osobne podatke.</p>
+          </li>
+          <li><span class="ethics__num">04</span>
+            <p>Ranjivosti koje pronađemo <strong>odgovorno prijavljujemo</strong>.</p>
+          </li>
+          <li><span class="ethics__num">05</span>
+            <p>Znanje koristimo <strong>za obranu i zaštitu</strong>, a ne za štetu.</p>
+          </li>
+        </ol>
+        <aside class="callout callout--warn reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <path d="M12 9v4M12 17h.01" />
+            <path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z" />
+          </svg>
+          <p><strong>Pravna napomena:</strong> neovlašteni pristup računalnom sustavu kazneno je djelo po <a
+              href="https://www.zakon.hr/z/98/kazneni-zakon" target="_blank" rel="noopener">Kaznenom zakonu RH (čl. 266.
+              — Neovlašteni pristup)</a> — zatvor do dvije godine, odnosno do tri godine kad je riječ o sustavima tijela
+            državne vlasti i slično. Okvir dodatno definira <a href="https://ncsc.hr/hr/nacionalni-zakonodavni-okvir"
+              target="_blank" rel="noopener">Zakon o kibernetičkoj sigurnosti (NN 14/24)</a>, prijenos NIS2 direktive.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===================== OPREMA ===================== -->
+    <section class="section section--offset" id="oprema">
+      <div class="container">
+        <p class="eyebrow reveal">[ 06 ] — OPREMA I ALATI</p>
+        <h2 class="section__title reveal">Što je potrebno za izvedbu</h2>
+        <div class="grid grid--3">
+          <article class="card card--compact reveal">
+            <h3><span class="mono-tag">hw</span> Računala</h3>
+            <p>8 GB RAM-a ili više radi virtualnih strojeva; alternativno cloud-laboratorij (TryHackMe, picoCTF
+              picoGym).</p>
+          </article>
+          <article class="card card--compact reveal">
+            <h3><span class="mono-tag">vm</span> Virtualizacija</h3>
+            <p>VirtualBox ili VMware, Kali Linux, ranjivi virtualni strojevi (Metasploitable2).</p>
+          </article>
+          <article class="card card--compact reveal">
+            <h3><span class="mono-tag">net</span> Mreža</h3>
+            <p>Wireshark, Nmap, Cisco Packet Tracer.</p>
+          </article>
+          <article class="card card--compact reveal">
+            <h3><span class="mono-tag">web</span> Web</h3>
+            <p>OWASP Juice Shop, DVWA, preglednik s alatima za razvojne programere.</p>
+          </article>
+          <article class="card card--compact reveal">
+            <h3><span class="mono-tag">sec</span> Kriptografija</h3>
+            <p>CyberChef, Python, GPG.</p>
+          </article>
+          <article class="card card--compact reveal">
+            <h3><span class="mono-tag">rev</span> Reverzno inženjerstvo</h3>
+            <p>Ghidra, strings, GDB, dva pripremljena crackme zadatka.</p>
+          </article>
+          <article class="card card--compact reveal">
+            <h3><span class="mono-tag">iot</span> IoT</h3>
+            <p>Raspberry Pi ili ESP32 (opcionalno), MQTT broker (Mosquitto).</p>
+          </article>
+          <article class="card card--compact reveal">
+            <h3><span class="mono-tag">iso</span> Izolirana mreža</h3>
+            <p>Laboratorij mora biti odvojen od školske mreže.</p>
+          </article>
+          <article class="card card--compact card--cta reveal">
+            <h3><span class="mono-tag">tip</span> Preporuke za izvedbu</h3>
+            <ul class="tips">
+              <li>Svaku jedinicu započeti kratkim motivirajućim primjerom iz stvarnog života (vijest, incident, CTF
+                zadatak).</li>
+              <li>Prioritet dati praktičnom radu, teoriju držati kratkom i vizualnom.</li>
+              <li>Miješati timove prema predznanju, napredne učenike dodatno izazovati težim CTF razinama.</li>
+              <li>Uključiti gostujuće predavače iz industrije (CARNET-ov Nacionalni CERT, lokalne tvrtke) kad je moguće.
+              </li>
+              <li>Redovito ažurirati sadržaj — područje se brzo mijenja (OWASP Top 10 dobio je novu verziju 2025.).</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== IZVORI ===================== -->
+    <section class="section" id="izvori">
+      <div class="container">
+        <p class="eyebrow reveal">[ 07 ] — IZVORI</p>
+        <h2 class="section__title reveal">Provjereni vanjski resursi</h2>
+        <p class="section__lead reveal">Svi izvori provjereni u studenom 2026. godine.</p>
+        <div id="sources-list"></div>
+        <aside class="callout callout--info reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 16v-4M12 8h.01" />
+          </svg>
+          <p><strong>Napomena o provjeri izvora:</strong> OWASP Top 10 lista ažurirana je 2025. (nove kategorije
+            Software Supply Chain Failures i Mishandling of Exceptional Conditions). TryHackMe „Pre Security" put
+            obnovljen je u veljači 2026. CARNET-ov priručnik „Osnove kibernetičke zaštite…" objavljen je u svibnju 2025.
+            na Edutoriju.</p>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 4l9 3.4v7.8c0 5.6-3.9 9.5-9 11.1-5.1-1.6-9-5.5-9-11.1V7.4L16 4z" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+          <circle cx="16" cy="14.5" r="2.6" fill="currentColor" />
+        </svg>
+        <div>
+          <p class="footer__title">Kibernetička sigurnost</p>
+          <p class="footer__sub">Kurikulum · 9 nastavnih jedinica · 35 sati · srednja škola</p>
+        </div>
+      </div>
+      <p class="footer__note">Izvori provjereni u studenom 2026.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
